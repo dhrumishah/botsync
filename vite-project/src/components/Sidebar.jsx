@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { FaRegPenToSquare } from "react-icons/fa6";
+import { FiHome } from "react-icons/fi";
 
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const handleClose = () => {
@@ -17,7 +19,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <div
         className={`
           fixed md:static top-0 left-0 h-screen w-[200px] bg-white border-r shadow-xl border-[#80808066] 
-          px-4 pt-8 gap-2 z-50 flex flex-col transition-transform duration-300 
+          pl-2 pt-8 gap-2 z-50 flex flex-col transition-transform duration-300 
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           md:translate-x-0 md:flex
         `}
@@ -34,24 +36,26 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           end
           onClick={handleClose}
           className={({ isActive }) =>
-            `flex gap-2 items-center px-2 py-1.5 rounded-md hover:bg-blue-100 ${
-              isActive ? "text-blue-500" : "text-[#808080]"
+            `flex gap-2 items-center p-2 hover:bg-blue-100 ${
+              isActive ? "text-blue-500 border-r-2 border-blue-500" : "text-[#808080]"
             }`
           }
         >
-          Home
+          <FiHome />
+          <div>Home</div>
         </NavLink>
 
         <NavLink
           to="/applications"
           onClick={handleClose}
           className={({ isActive }) =>
-            `flex gap-2 items-center px-2 py-1.5 rounded-md hover:bg-blue-100 ${
-              isActive ? "text-blue-500" : "text-[#808080]"
+            `flex gap-2 items-center p-2 hover:bg-blue-100 ${
+              isActive ? "text-blue-500 border-r-2 border-blue-500" : "text-[#808080]"
             }`
           }
         >
-          Applications
+          <FaRegPenToSquare />
+          <div>Applications</div>
         </NavLink>
       </div>
     </>
