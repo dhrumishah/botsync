@@ -17,10 +17,12 @@ function App() {
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/applications" element={<DashBoard />} />
-          </Routes>
+          <div className="flex-1 px-5 pt-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/applications" element={<DashBoard />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>
