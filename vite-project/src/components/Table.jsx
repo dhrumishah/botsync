@@ -14,7 +14,7 @@ import TableItem from "./TableItem";
           </thead>
           <tbody>
             {filteredData.map((row) => (
-              <TableItem row={row} />
+              <TableItem row={row} key={row.id} />
             ))}
           </tbody>
         </table>
